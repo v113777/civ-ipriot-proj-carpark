@@ -1,10 +1,7 @@
 from datetime import datetime
-
-from config_parser import parse_config
-import mqtt_device
-import paho.mqtt.client as paho
 from paho.mqtt.client import MQTTMessage
-
+import mqtt_device
+from config_parser import parse_config
 
 CONFIG_FILE = "Configs.json"
 
