@@ -1,0 +1,29 @@
+{
+  "Carpark": {
+    "name": "V113777-park",
+    "total-spaces": "05",
+    "total-cars": 0,
+    "location": "L306",
+    "topic-root": "lot",
+    "broker": "localhost",
+    "port": 1883,
+    "topic-qualifier": "entry",
+    "is_stuff": "False"
+  },
+  "Display": {
+    "name": "display",
+    "location": "L306",
+    "topic-root": "lot",
+    "broker": "localhost",
+    "port": 1883,
+    "topic-qualifier": "na"
+  },
+  "Sensor": {
+    "name": "sensor",
+    "location": "moondalup",
+    "topic-root": "lot",
+    "broker": "localhost",
+    "port": 1883,
+    "topic-qualifier": "na"
+  }
+}

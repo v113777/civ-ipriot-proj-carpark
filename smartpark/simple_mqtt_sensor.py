@@ -1,9 +1,11 @@
 """"Demonstrates a simple implementation of an 'event' listener that triggers
 a publication via mqtt"""
 import random
-
 import mqtt_device
+from config_parser import parse_config
 
+
+CONFIG_FILE = "Configs.json"
 
 class Sensor(mqtt_device.MqttDevice):
 
@@ -15,6 +17,7 @@ class Sensor(mqtt_device.MqttDevice):
     def on_detection(self, message):
         """Triggered when a detection occurs"""
         self.client.publish('sensor', message)
+
 
     def start_sensing(self):
         """ A blocking event loop that waits for detection events, in this
@@ -30,19 +33,9 @@ class Sensor(mqtt_device.MqttDevice):
 
 
 if __name__ == '__main__':
-    config1 = {'name': 'sensor',
-              'location': 'moondalup',
-              'topic-root': "lot",
-              'broker': 'localhost',
-              'port': 1883,
-              }
-    # TODO: Read previous config from file instead of embedding
-
-    sensor1 = Sensor(config1)
+    sensor1 = Sensor(parse_config(CONFIG_FILE)["Sensor"])
 
 
     print("Sensor initialized")
-    sensor1.start_sensing()
-
     sensor1.start_sensing()
 
