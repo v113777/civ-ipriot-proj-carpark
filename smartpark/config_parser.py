@@ -32,7 +32,6 @@ Finally, you can use `yaml` if you prefer.
 """
 import json
 
-
 def parse_config(Config):
     """Parse the config file and return the values as a dictionary"""
     with open(Config) as json_file:
